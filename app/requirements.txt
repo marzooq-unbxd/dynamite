@@ -1,0 +1,4 @@
+Flask
+uWSGI
+nltk
+requests

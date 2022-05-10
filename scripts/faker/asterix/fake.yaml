@@ -1,0 +1,42 @@
+server:
+  host: "0.0.0.0"
+  port: "12000"
+
+
+handlers:
+  - path: "/cores/globalindustrial-com702401520254089/analyzers/mw"
+    methods:
+      - "GET"
+    must_params:
+    must_kv_params:
+      query: "30899420"
+      format: "raw"
+    response:
+      status_code: 200
+      source: "file"
+      args:
+        filepath: "/faker/responses/query1.txt"
+  - path: "/cores/globalindustrial-com702401520254089/analyzers/mw"
+    methods:
+      - "GET"
+    must_params:
+    must_kv_params:
+      query: "#11 blade"
+      format: "raw"
+    response:
+      status_code: 200
+      source: "file"
+      args:
+        filepath: "/faker/responses/query2.txt"
+  - path: "/cores/globalindustrial-com702401520254089/analyzers/mw"
+    methods:
+      - "GET"
+    must_params:
+    must_kv_params:
+      query: "1"
+      format: "raw"
+    response:
+      status_code: 200
+      source: "file"
+      args:
+        filepath: "/faker/responses/query3.txt"
