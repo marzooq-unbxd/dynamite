@@ -11,7 +11,7 @@ services:
 #    image: appropriate/curl
 #    command: ping localhost
   dynamite:
-    image: qcs:latest
+    image: dynamite:latest
     environment:
       - ASTERIX_URL=http://asterix:12000/
 #      - ALBUSCLIENT_ALBUS_HOST=http://albusv2:7688
