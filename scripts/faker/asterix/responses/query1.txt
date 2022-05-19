@@ -1,1 +1,1 @@
-30899420
+{'analyzedQuery': 'Tridon +Cable<><%><##>lead Ties 150 x 4mm Black'}

@@ -4,39 +4,73 @@ server:
 
 
 handlers:
-  - path: "/cores/globalindustrial-com702401520254089/analyzers/mw"
-    methods:
-      - "GET"
-    must_params:
-    must_kv_params:
-      query: "30899420"
-      format: "raw"
-    response:
-      status_code: 200
-      source: "file"
-      args:
-        filepath: "/faker/responses/query1.txt"
-  - path: "/cores/globalindustrial-com702401520254089/analyzers/mw"
-    methods:
-      - "GET"
-    must_params:
-    must_kv_params:
-      query: "#11 blade"
-      format: "raw"
-    response:
-      status_code: 200
-      source: "file"
-      args:
-        filepath: "/faker/responses/query2.txt"
-  - path: "/cores/globalindustrial-com702401520254089/analyzers/mw"
-    methods:
-      - "GET"
-    must_params:
-    must_kv_params:
-      query: "1"
-      format: "raw"
-    response:
-      status_code: 200
-      source: "file"
-      args:
-        filepath: "/faker/responses/query3.txt"
+- path: "/"
+  methods:
+  - "GET"
+  must_params:
+  must_kv_params:
+  response:
+    status_code: 200
+    source: "text"
+    headers:
+      "content-type": "text/plain"
+    args:
+      content: "pong"
+- path: "/ping"
+  methods:
+  - "GET"
+  must_params:
+  must_kv_params:
+  response:
+    status_code: 200
+    source: "text"
+    headers:
+      "content-type": "text/plain"
+    args:
+      content: "pong"
+- path: "/monitor"
+  methods:
+    - "GET"
+  must_params:
+  must_kv_params:
+  response:
+    status_code: 200
+    source: "file"
+    args:
+      filepath: "/faker/responses/helloworld.txt"
+- path: "/v2/cores/www-mitre10new-co-nz805201575257125/analyzers/search"
+  methods:
+    - "GET"
+  must_params:
+  must_kv_params:
+    query: 'Tridon Cable Ties 150 x 4mm Black'
+    format: "raw"
+  response:
+    status_code: 200
+    source: "file"
+    args:
+      filepath: "/faker/responses/query1.txt"
+- path: "/v2/cores/www-mitre10new-co-nz805201575257125/analyzers/search"
+  methods:
+    - "GET"
+  must_params:
+  must_kv_params:
+    query: "Number 8 Butane Gas Canisters Pack of 4, 220g"
+    format: "raw"
+  response:
+    status_code: 200
+    source: "file"
+    args:
+      filepath: "/faker/responses/query2.txt"
+- path: "/v2/cores/www-mitre10new-co-nz805201575257125/analyzers/search"
+  methods:
+    - "GET"
+  must_params:
+  must_kv_params:
+    query: "Indoor tv antenna"
+    format: "raw"
+  response:
+    status_code: 200
+    source: "file"
+    args:
+      filepath: "/faker/responses/query3.txt"

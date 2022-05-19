@@ -1,1 +1,1 @@
-#11 blade
+{'analyzedQuery': 'Number 8 Butane +Gas<><%><##>lpg Canisters Pack 4, 220g'}

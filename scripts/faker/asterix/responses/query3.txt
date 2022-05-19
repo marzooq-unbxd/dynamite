@@ -1,1 +1,1 @@
-1
+{'analyzedQuery': 'Indoor<><%><##>door tv antenna'}

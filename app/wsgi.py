@@ -22,10 +22,10 @@ class WsgiApp:
         init()
         # ElasticAPM(self.app, logging=logging.INFO)
         # attach statsd (dd)
-        try:
-            setup_metrics()
-        except Exception as ex:
-            logging.error("Unable to initialize metrics: {}".format(ex))
+        # try:
+        #     setup_metrics()
+        # except Exception as ex:
+        #     logging.error("Unable to initialize metrics: {}".format(ex))
 
     def __call__(self, environ, start_response):
         return self.app(environ, start_response)

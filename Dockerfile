@@ -9,12 +9,6 @@ RUN useradd --shell /bin/bash --create-home worker
 USER worker
 SHELL ["/bin/bash", "-c"]
 WORKDIR /home/worker
-ARG CI_USER_TOKEN
-ENV CI_USER_TOKEN=$CI_USER_TOKEN
-ARG AWS_SECRET_ACCESS_KEY
-ENV AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-ARG AWS_ACCESS_KEY_ID
-ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
 ENV PATH="/home/worker/.local/bin:${PATH}"
 
 RUN pip install awscli --upgrade --user
@@ -26,11 +20,9 @@ RUN mkdir ~/.environments
 RUN virtualenv ~/.environments/qcs
 ENV VIRTUAL_ENV ~/.environments/qcs
 ENV PATH /home/worker/.environments/qcs/bin:$PATH
-RUN pip install nltk spacy
-RUN python -m nltk.downloader stopwords
-RUN python -m spacy download en_core_web_sm
+RUN pip install nltk
 RUN python -m nltk.downloader wordnet
-RUN echo -e "machine github.com\n  login $CI_USER_TOKEN" > ~/.netrc
+RUN python -m nltk.downloader omw-1.4
 
 RUN mkdir -p QCS/app/logs/
 ADD requirements.txt .
@@ -42,7 +34,7 @@ WORKDIR /home/worker/QCS/app
 
 ARG BUCKET_NAME
 
-RUN uwsgi --build-plugin https://github.com/Datadog/uwsgi-dogstatsd
+# RUN uwsgi --build-plugin https://github.com/Datadog/uwsgi-dogstatsd
 
 EXPOSE 8080
 

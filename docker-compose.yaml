@@ -3,11 +3,14 @@ services:
   asterix:
     build: scripts/faker/asterix/.
     ports:
-    - "12003:12000"
+      - "12000:12000"
     environment:
       - VIRTUAL_HOST=asterix
-      - VIRTUAL_PORT=12003
-  qcs:
+      - VIRTUAL_PORT=12000
+#  get_curl:
+#    image: appropriate/curl
+#    command: ping localhost
+  dynamite:
     image: qcs:latest
     environment:
       - ASTERIX_URL=http://asterix:12000/
