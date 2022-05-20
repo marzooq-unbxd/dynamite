@@ -1,4 +1,4 @@
-from qcs import app, init
+from dynamite import app, init
 
 if __name__ == "__main__":
     

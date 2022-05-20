@@ -3,7 +3,7 @@
 from flask import Flask
 
 # from __init__ import setup_metrics
-from qcs import app, init
+from dynamite import app, init
 import os
 import sys
 import logging
