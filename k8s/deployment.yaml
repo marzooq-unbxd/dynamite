@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: search
+  name: dynamite
+#  labels:
+#     app: nodeapp
+#     type: front-end
+spec:
+  template:
+     metadata:
+       name: dynamite
+       labels:
+         app: dynamite
+     spec:
+         containers:
+           - name: dynamite
+             image: "marzooqdocker/dynamite:latest"
+  replicas: 1
+#  selector:
+#    matchLabels:
+#      type: front-end

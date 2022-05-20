@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: search
+  name: dynamite
+  labels:
+    app: dynamite
+    env:  dev
+#    region: us-east-1
+#  annotations:
+#    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+spec:
+  type: LoadBalancer
+  selector:
+    app: dynamite
+    env:
+    region: us-east-1
+  ports:
+    - port: 80
+      targetPort: 8080
+      name: http
