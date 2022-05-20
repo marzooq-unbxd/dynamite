@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   namespace: search
   name: dynamite
-#  labels:
-#     app: nodeapp
+  labels:
+     app: dynamite
 #     type: front-end
 spec:
   template:
@@ -17,6 +17,7 @@ spec:
            - name: dynamite
              image: "marzooqdocker/dynamite:latest"
   replicas: 1
-#  selector:
-#    matchLabels:
+  selector:
+    matchLabels:
+      app: dynamite
 #      type: front-end
